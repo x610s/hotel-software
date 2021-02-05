@@ -1,0 +1,92 @@
+<div class="card shadow rounded col-md-12 mx-2 col-12" id="tarjeta">
+  <div class="card-body text-center ">
+    <h3 class="card-title shadow rounded">{{Plan.nombrePlan}} </h3>
+
+
+
+
+
+
+    <div class="row bg-primary rounded shadow  text-white justify-content-center fw-bold ">
+      <div class="col-12  ">
+        <div class="row  col-12 m-auto " *ngIf="tipo">
+
+
+          <div class="border-bottom col-12 py-2 d-flex m-auto justify-content-center" *ngIf="tipo">
+            <small class="precio-base-anual mx-2">
+              ${{Plan.precioBase+this.numeroHabitaciones}}
+            </small>
+            <h4 class="mr-1">${{getPrecioToltal()}}</h4>
+          </div>
+
+
+        </div>
+
+        <h4 class="border-bottom py-2" *ngIf="!tipo">
+          ${{getPrecioToltal()}}
+        </h4>
+
+        <div class=" mb-2 py-2 ">
+          <!--    <small *ngIf="!tipo" class="shadow">Mensual</small> -->
+
+          <div class="row">
+            <div class="col-12 shadow">
+              <small *ngIf="tipo" class="ml-2">Anual <small class="anual-mesualidad ">Por mes(Pago anualmente)</small>
+              </small>
+              <small *ngIf="!tipo">Mensual</small>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="row pt-2 border-bottom justify-content-center ">
+      <h3 class=" shadow rounded p-2 mt-2 px-4">Beneficios</h3>
+    </div>
+
+
+    <ul class="list-group  listado-beneficios  ">
+      <div *ngIf="!mostrarTodos">
+        <div *ngFor="let beneficio of Plan.beneficios; let i = index;">
+          <li *ngIf="i<3" class="list-group-item border mt-2 justify-content-start" mat-raised-button
+            [matTooltip]="beneficio.descripcion">
+            <span > {{beneficio.nombreBeneficio}} </span>
+          </li>
+        </div>
+
+      </div>
+      <div *ngIf="mostrarTodos">
+        <div *ngFor="let beneficio of Plan.beneficios; let i = index;">
+          <li class="list-group-item border mt-2 justify-content-start animated fadeIn" mat-raised-button
+            [matTooltip]="beneficio.descripcion">
+            <span > {{beneficio.nombreBeneficio}} </span>
+          </li>
+        </div>
+
+      </div>
+    </ul>
+
+
+
+
+    <div class="row">
+      <button class="btn btn-outline-dark btn-block mx-3 mt-4" (click)="allBeneficios()" *ngIf="getCantidadBenefifios()>3">
+        <span *ngIf="mostrarTodos">Ver menos</span>
+        <span *ngIf="!mostrarTodos">Ver mas</span>
+      </button>
+      <!--  <button class="btn btn-primary btn-block mx-3 mt-4">Comprar</button> -->
+
+
+
+
+    </div>
+
+
+
+  </div>
+</div>

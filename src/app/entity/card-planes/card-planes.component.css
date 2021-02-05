@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap');
+#tarjeta{
+  font-family: 'Poppins', sans-serif;
+  min-height: 300px;
+  width: 250px;
+  min-width: 300px;
+}
+
+
+.precio-base-anual{
+  text-decoration: line-through;
+}
+small{
+  font-size: 15px;
+}
+.anual-mesualidad{
+  font-size: 10px;
+}
+.anual-mesualidad{
+
+}

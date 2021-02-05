@@ -1,0 +1,87 @@
+<div class="row home pb-5">
+
+
+  <div class="col-11 m-auto">
+    <div class="row bg-white mt-4 shadow rounded text-dark py-2">
+      <h1 class=" col-12 text-center display-2 ">Planes</h1>
+      <div class="col-12 ">
+
+        <div class="row border py-2 shadow col-11 rounded   m-auto justify-content-center ">
+          <div class="col-12  col-md-6">
+            <div class="row justify-content-center">
+              <h5>Modo de pago</h5>
+            </div>
+
+
+            <div class="row justify-content-center m-auto  mb-3">
+              <div class="tipos">
+                <span class="mx-2">Mensual</span>
+                <mat-slide-toggle [(ngModel)]="tipoPago" color="warn"></mat-slide-toggle>
+                   <span class="mx-2">Anual
+                   </span>
+              </div>
+
+                 <div id="caja" class="border rounded px-1">
+                  <i class="fa fa-hand-o-left desplazar-mano " aria-hidden="true"></i>
+                  <small class="mx-2 text-white">Ahorra hasta un <strong class="text-dark">10%</strong></small>
+                </div>
+
+            </div>
+
+
+
+
+          </div>
+
+
+          <div class="col-12   border-left border-right col-md-4">
+
+            <div class="input-group mb-3 mt-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Habitaciones <i class="fa fa-chevron-right mx-2"
+                    aria-hidden="true"></i> </span>
+              </div>
+              <input type="number" class="form-control" id="basic-url" aria-describedby="basic-addon3" min="0" max="50"
+                maxlength="3" [(ngModel)]="numeroHabitaciones">
+            </div>
+          </div>
+
+          <div class="col-12 col-md-2 justify-content-center ">
+            <div class="row justify-content-center">
+              <h5>Factura digital</h5>
+            </div>
+
+
+            <div class="row justify-content-center  mb-3">
+              <span class="mx-2"><i class="fa fa-times" aria-hidden="true"></i></span>
+              <mat-slide-toggle color="primary" [(ngModel)]="hasFactura"></mat-slide-toggle>
+              <span class="mx-2"> <i class="fa fa-check" aria-hidden="true"></i> </span>
+            </div>
+
+
+
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+
+  <div class="card-group mb-4 col-12 col-md-12  justify-content-center  py-2">
+    <app-card-planes [numeroHabitaciones]="numeroHabitaciones" [tipo]="tipoPago" [Plan]="plan" [hasFactura]="hasFactura"
+      *ngFor="let plan of planes"></app-card-planes>
+  </div>
+
+</div>
